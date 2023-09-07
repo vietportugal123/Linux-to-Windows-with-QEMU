@@ -8,13 +8,13 @@ sudo apt update -y > /dev/null 2>&1
 echo "Installing QEMU (2-3m)..."
 sudo apt install qemu-system-x86 curl -y > /dev/null 2>&1
 echo Downloading Windows Disk...
-curl -L -o lite10.qcow2 https://app.vagrantup.com/thuonghai2711/boxes/WindowsQCOW2/versions/1.1.3/providers/qemu.box
-echo "Windows 10 x64 Lite On Google Colab"
+curl -L -o lite11.qcow2 https://app.vagrantup.com/thuonghai2711/boxes/WindowsQCOW2/versions/1.0.2/providers/qemu.box
+echo "Windows 11 x64 Lite On Google Colab"
 echo Your VNC IP Address:
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo "Note: Use Right-Click Or Ctrl+C To Copy"
 echo "Please Keep Colab Tab Open, Maximum Time 12h"
 echo Script by fb.com/thuong.hai.581
-sudo qemu-system-x86_64 -vnc :0 -hda lite10.qcow2  -smp cores=8  -m 10000M -machine usb=on -device usb-tablet > /dev/null 2>&1
+sudo qemu-system-x86_64 -vnc :0 -hda lite11.qcow2  -smp cores=8  -m 10000M -machine usb=on -device usb-tablet > /dev/null 2>&1
 
 
